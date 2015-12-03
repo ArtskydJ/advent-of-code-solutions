@@ -1,6 +1,5 @@
-var fs = require('fs')
 var sum = require('../sum.js')
-var input = fs.readFileSync('02_input.txt', 'utf-8')
+var input = require('../get-input')(2)
 
 var n = input.split('\n').map(boxToSquareFeet).reduce(sum, 0)
 console.log(n)
