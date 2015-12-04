@@ -1,8 +1,8 @@
-var sum = require('../sum.js')
-var input = require('../get-input')(2)
+var sum = require('../lib/sum.js')
 
-var n = input.split('\n').map(boxToSquareFeet).reduce(sum, 0)
-console.log(n)
+module.exports = function (input) {
+	return input.split('\n').map(boxToSquareFeet).reduce(sum, 0)
+}
 
 function boxToSquareFeet(box) {
 	var d = box.split('x').map(Number)

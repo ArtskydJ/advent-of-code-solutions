@@ -1,9 +1,9 @@
-var sum = require('../sum.js')
-var multiply = require('../multiply.js')
-var input = require('../get-input')(2)
+var sum = require('../lib/sum.js')
+var multiply = require('../lib/multiply.js')
 
-var n = input.split('\n').map(boxToRibbonLength).reduce(sum, 0)
-console.log(n)
+module.exports = function (input) {
+	return input.split('\n').map(boxToRibbonLength).reduce(sum, 0)
+}
 
 function boxToRibbonLength(box) {
 	var d = box.split('x').map(Number)
