@@ -1,7 +1,7 @@
 var sum = require('../lib/sum.js')
 
 module.exports = function (input) {
-	return input.split('\n').map(boxToSquareFeet).reduce(sum, 0)
+	return sum(input.split('\n').map(boxToSquareFeet))
 }
 
 function boxToSquareFeet(box) {
@@ -12,5 +12,5 @@ function boxToSquareFeet(box) {
 		d[2] * d[0]
 	]
 	var slack = Math.min.apply(null, sides)
-	return sides.reduce(sum, 0) * 2 + slack
+	return sum(sides) * 2 + slack
 }
