@@ -2,7 +2,7 @@ var sum = require('../lib/sum.js')
 var multiply = require('../lib/multiply.js')
 
 module.exports = function (input) {
-	return sum(input.split('\n').map(boxToRibbonLength))
+	return sum(input.map(boxToRibbonLength))
 }
 
 function boxToRibbonLength(box) {

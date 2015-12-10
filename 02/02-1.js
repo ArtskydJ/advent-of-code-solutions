@@ -1,7 +1,7 @@
 var sum = require('../lib/sum.js')
 
 module.exports = function (input) {
-	return sum(input.split('\n').map(boxToSquareFeet))
+	return sum(input.map(boxToSquareFeet))
 }
 
 function boxToSquareFeet(box) {
