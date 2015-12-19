@@ -25,7 +25,7 @@ module.exports = function (input, half) {
 		people = Object.keys(relations)
 	}
 
-	var combos = combinations(people.length, true)
+	var combos = combinations(people.length, people.length, true)
 
 	return combos.map(function (combo) {
 		var personIndexes = combo.split('').map(Number)
