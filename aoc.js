@@ -22,6 +22,8 @@ function runSolution(day, half) {
 }
 
 function printUsageAndExit() {
-	console.log('Usage: node aoc <day> <half>')
+	console.error('Usage: node aoc <day> <half>')
+	console.error('  <day> is a number between 1 and 25')
+	console.error('  <half> is 1 or 2')
 	process.exit(1)
 }
