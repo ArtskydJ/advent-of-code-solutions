@@ -7,13 +7,19 @@
 - install [node.js](https://nodejs.org/en/download)
 - clone this repo
 - `cd` into this repo
-- run `node aoc <day> <half>`
+- run `node aoc [year] day half`
+   - E.g. `node aoc 2015 12 1`
+   - E.g. `node aoc 2016 25 2`
 
-#### Unfinished
+#### Unfinished 2015
 
 - 19 (2)
 - 22 (1, 2)
 - 25 (2)
+
+#### Unfinished 2016
+
+- WIP
 
 #### License
 
