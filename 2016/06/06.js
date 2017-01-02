@@ -1,4 +1,4 @@
-module.exports = function (input, day) {
+module.exports = function (input, half) {
 	return input[0].split('').map(function (_, index) {
 		return input.reduce(function (counts, scrambled) {
 			var letter = scrambled[index]
@@ -6,7 +6,7 @@ module.exports = function (input, day) {
 			counts[letter]++
 			return counts
 		}, {})
-	}).map(day ? smallest : largest).join('')
+	}).map(half ? smallest : largest).join('')
 }
 
 function largest(counts) {
