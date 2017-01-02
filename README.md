@@ -19,7 +19,8 @@
 
 #### Unfinished 2016
 
-- 4 - 25
+- 4 (1, 2)
+- Any after #5 that have no changes in 2017
 
 #### License
 
