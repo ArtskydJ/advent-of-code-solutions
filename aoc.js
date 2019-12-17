@@ -7,7 +7,7 @@ if (year < 2015 || year > 2025) printUsageAndExit('year')
 if (day < 1 || day > 25 || Math.round(day) !== day) printUsageAndExit('day')
 if (half !== 1 && half !== 2) printUsageAndExit('half')
 
-var paddedDay = '/' + ('0' + day).slice(-2)
+const paddedDay = '/' + ('0' + day).slice(-2)
 var fn = null
 try {
 	fn = require('./' + year + paddedDay + '-' + half)
@@ -16,7 +16,7 @@ try {
 	fn = require('./' + year + paddedDay)
 }
 
-var input = fs.readFileSync(path.join(__dirname, '' + ear, paddedDay + '-input.txt'), 'utf8')
+var input = fs.readFileSync(path.join(__dirname, '' + year, paddedDay + '-input.txt'), 'utf8')
 input = /\n/.test(input) ? input.split(/\r?\n/g) : input
 
 console.time('Run time')
