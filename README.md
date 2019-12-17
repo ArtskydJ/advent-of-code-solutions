@@ -11,18 +11,18 @@
    - E.g. `node aoc 2015 12 1`
    - E.g. `node aoc 2016 25 2`
 
-## Notes 2015
+## 2015
 
-- 13-2 Slow, 4 minutes
-- 19-2 Unfinished
-- 22-1 Unfinished
-- 22-2 Unfinished
-- 25-2 Unfinished
+- 13-2 takes 4 minutes to complete
+- 19-2 is unfinished
+- 22-1 is unfinished
+- 22-2 is unfinished
+- 25-2 is unfinished
 
 ## 2016
 
-- 4-1 Unfinished
-- 4-2 Unfinished
+- 4-1 is unfinished
+- 4-2 is unfinished
 - 8 and later are unfinished
 
 ## 2017
@@ -31,7 +31,8 @@
 
 ## 2018
 
-- All are unfinished
+- 1 is finished
+- All others are unfinished
 
 ## 2019
 
@@ -39,7 +40,7 @@
 
 ## Authentication (just useful for me)
 
-I used the GitHub OAuth service
+I am using GitHub OAuth
 
 ## License
 

@@ -1,1 +1,3 @@
-$0.innerText.split('\n').reduce(function(memo,curr){return memo + Number(curr)}, 0)
+module.exports = function (input) {
+	return input.map(Number).reduce((a, b) => a + b, 0)
+}
