@@ -14,16 +14,14 @@
 ## 2015
 
 - 13-2 takes 4 minutes to complete
-- 19-2 is unfinished
 - 22-1 is unfinished
 - 22-2 is unfinished
 - 25-2 is unfinished
 
 ## 2016
 
-- 4-1 is unfinished
-- 4-2 is unfinished
-- 8 and later are unfinished
+- 9-2 is unfinished
+- 10 and later are unfinished
 
 ## 2017
 
