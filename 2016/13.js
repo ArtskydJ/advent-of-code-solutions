@@ -47,6 +47,6 @@ module.exports = (input, half) => {
 
 	return !half
 		? distances[END] // puzzle 1
-		: Object.keys(distances).length // puzzle 1
+		: Object.keys(distances).length // puzzle 2
 }
 
