@@ -1,40 +1,47 @@
-function getReplacements(initialMolecule) {
-	return function (replacement) {
-		var find = replacement.find
-		var molecules = []
-		for (var i = initialMolecule.indexOf(find); i !== -1; i = initialMolecule.indexOf(find, i + 1)) {
-			var start = initialMolecule.slice(0, i)
-			var end = initialMolecule.slice(i).replace(find, replacement.replace)
-			molecules.push(start + end)
+module.exports = input => {
+	const initialMolecule = input.pop()
+	input.pop()
+
+	const replacements = input.map(line => {
+		const [ find, replace ] = line.split(' => ')
+		return { find, replace }
+	})
+
+	const shortestReplacement = Math.min( ...replacements.map(({ replace}) => replace.length) )
+	const longestReplacement = Math.max( ...replacements.map(({ replace}) => replace.length) )
+
+	while (true) {
+		const count = randomAttempt(initialMolecule, replacements, shortestReplacement, longestReplacement)
+		if (count) {
+			return count
 		}
-		return molecules
 	}
 }
 
-function x(initialMolecule, replacements, count) {
-	var molecules = replacements
-		.map(getReplacements(initialMolecule))
-		.reduce((memo, curr) => memo.concat(curr), [])
+function randomAttempt(molecule, replacements, shortestReplacement, longestReplacement) {
+	let steps = 0
+	for (let i = 0; i < 500; i++) {
+		const findLength = randRange(shortestReplacement, longestReplacement)
+		const findIndex = randRange(0, molecule.length - findLength)
+		const found = molecule.slice(findIndex, findIndex + findLength)
+		const availableReplacements = replacements.filter(({ replace }) => found === replace)
 
-	if (molecules.length === 0) return Infinity
+		if (availableReplacements.length) {
+			const availableReplacementsIndex = randRange(0, availableReplacements.length - 1)
+			const replacement = availableReplacements[availableReplacementsIndex].find
+			molecule = molecule.slice(0, findIndex) + replacement + molecule.slice(findIndex + findLength)
+			steps++
+			i = 0
 
-	return molecules.map(function (molecule) {
-		if (molecule === 'e') {
-			return count
-		} else {
-			return x(molecule, replacements, count + 1)
+			if (molecule === 'e') {
+				return steps
+			}
 		}
-	}).reduce((a, b) => a < b ? a : b, Infinity)
+	}
 }
 
-module.exports = function (input, half) {
-	var initialMolecule = input.pop()
-	input.pop()
-
-	var replacements = input.map(function (line) {
-		var parts = line.split(' => ')
-		return { find: parts[1], replace: parts[0] }
-	})
-
-	return x(initialMolecule, replacements, 1)
+function randRange(low, high) {
+	return Math.floor(Math.random() * (high - low + 1) + low)
 }
+
+// console.log(module.exports([ 'e => H', 'e => O', 'H => HO', 'H => OH', 'O => HH', '', 'HOH' ]))
