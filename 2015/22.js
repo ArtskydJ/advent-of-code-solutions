@@ -1,4 +1,4 @@
-var spells = [
+const spells = [
 	{ cost: 53, damage: 4, heal: 0 },
 	{ cost: 73, damage: 2, heal: 2 },
 	{ cost: 113, turns: 6, damage: 0, armor: 7, mana: 0 },
@@ -58,8 +58,6 @@ module.exports = function (input, half) {
 	})
 
 	var leastSpentMana = iterate(true, 0, enemy[0], enemy[1], 50, 500, [])
-
-	try{spells++}catch(_){} // lol jshint
 
 	return leastSpentMana
 }
